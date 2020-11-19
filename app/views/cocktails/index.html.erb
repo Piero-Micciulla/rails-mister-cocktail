@@ -1,5 +1,32 @@
+<div class="home">
+  <svg viewBox="0 0 960 300">
+  <symbol id="s-text">
+  <text text-anchor="middle" x="50%" y="80%">Cocktailz</text>
+  </symbol>
+
+  <g class = "g-ants">
+  <use xlink:href="#s-text" class="text-copy"></use>
+  <use xlink:href="#s-text" class="text-copy"></use>
+  <use xlink:href="#s-text" class="text-copy"></use>
+  <use xlink:href="#s-text" class="text-copy"></use>
+  <use xlink:href="#s-text" class="text-copy"></use>
+  </g>
+  </svg>
+</div>
+
+
 <ul>
   <% @cocktails.each do |cocktail| %>
     <li><%= cocktail.name %></li>
   <% end %>
 </ul>
+
+<div class="container mt-4">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <%= link_to cocktail.name, cocktail_path(cocktail), class: "link-cocktail" %>
+      </div>
+    <% end %>
+  </div>
+</div>
